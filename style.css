@@ -74,9 +74,7 @@ a {
 }
 
 #header-button:hover {
-    background-color: var(--color-orange);
-    border: 1.4px solid var(--color-primary);
-    color: white;
+    opacity: 0.9;
     cursor: pointer;
 }
 
@@ -172,6 +170,7 @@ a {
     font-size: 12px;
     line-height: 12px;
     color: #9498A4;
+    margin-right: 10px;
 
 }
 
@@ -238,41 +237,14 @@ line-height: 26px;
 }
 
 .icon-arrows-prev, .icon-arrows-next {
+    margin-right: 16px;
     width: 44px;
     height: 44px;
-    position: relative;
-    border-radius: 100%;
-}
-
-.icon-arrows-prev, .icon-arrows-next {
-    border: 1px solid black;
-    background-color: var(--color-primary);
-    margin-right: 16px;
-}
-
-.parent:hover .child {
-    background-color: green;
-}
-
-.fa-angle-right, .fa-angle-left {
-    position: absolute;
-    font-size: 25px;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    line-height: 46px;
-    text-align: center;
-    color: black;
 }
 
 .icon-arrows-prev:hover, .icon-arrows-next:hover {
     cursor: pointer;
-    background-color: black;
-}
-
-.icon-arrows-prev:hover .fa-angle-left, .icon-arrows-next:hover .fa-angle-right{
-    color: white;
+    opacity: 0.9;
 }
 
 .body-content-right {
@@ -322,6 +294,8 @@ line-height: 26px;
 #card-tour-list {
     margin-top: 40px;
     display: flex;
+    gap: 30px;
+    overflow-x: scroll;
 }
 
 .card-tour {
@@ -331,7 +305,6 @@ line-height: 26px;
     border: 2px solid #FFFFFF;
     box-shadow: 0px 24px 90px rgba(192, 188, 161, 0.22);
     border-radius: 16px;
-    margin-right: 30px;
 }
 
 .card-tour-detail {
@@ -378,13 +351,18 @@ line-height: 26px;
 }
 
 .card-tour-button {
-    width: 100px;
+    width: 120px;
     height: 37px;
     background: #2D3134;
     border-radius: 46px;
     margin-left: auto;
     color: white;
     margin-top: 25px;
+    padding: 0px 16px 0px 16px;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
 }
 
 .card-tour-button:hover {
@@ -434,35 +412,82 @@ line-height: 26px;
     grid-row-gap: 15px;
 }
 
-#body-destinations-images img:nth-child(1) {
+#body-destinations-images .destination-item:nth-child(1) {
     grid-column: 1 / 2;
     grid-row: 1 / 2;
+    position: relative;
 }
 
-#body-destinations-images img:nth-child(2) {
+#body-destinations-images .destination-item .destination-rate{
+    position: absolute;
+    top: 30px;
+    left: 30px;
+    width: 42px;
+    height: 24px;
+    background-color: black;
+    font-family: var(--font-primary);
+    color: white;
+    border-radius: 12px;
+    text-align: center;
+    line-height: 24px;
+}
+
+#body-destinations-images .destination-item:nth-child(1) .destination-rate, #body-destinations-images .destination-item:nth-child(4) .destination-rate {
+    background-color: white;
+    color: black;
+}
+
+#body-destinations-images .destination-item .name_location{
+    position: absolute;
+    bottom: 30px;
+    left: 30px;
+    color: #FFFFFF;
+}
+
+.name_location p:nth-child(1) {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+}
+
+.name_location p:nth-child(2) {
+    margin-top: 10px;
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 14px;
+}
+
+#body-destinations-images .destination-item:nth-child(2) {
     grid-column: 2 / 3;
     grid-row: 1 / 3;
+    position: relative;
 }
 
-#body-destinations-images img:nth-child(3) {
+#body-destinations-images .destination-item:nth-child(3) {
     grid-column: 3 / 5;
     grid-row: 1 / 2;
+    position: relative;
 }
 
-#body-destinations-images img:nth-child(4) {
+#body-destinations-images .destination-item:nth-child(4) {
     grid-column: 1 / 2;
     grid-row: 2 / 3;
     margin-top: 15px;
+    position: relative;
 }
 
-#body-destinations-images img:nth-child(5) {
+#body-destinations-images .destination-item:nth-child(5) {
     grid-column: 3 / 4;
     grid-row: 2 / 3;
+    position: relative;
 }
 
-#body-destinations-images img:nth-child(6) {
+#body-destinations-images .destination-item:nth-child(6) {
     grid-column: 4 / 5;
     grid-row: 2 / 3;
+    position: relative;
 }
 
 #space-line {
@@ -573,12 +598,8 @@ line-height: 26px;
 
 #icon-send-input {
     position: absolute;
-    top: 10px;
-    left: 65%;
-    width: 40px;
-    height: 40px;
-    background: #F66F4D;
-    border-radius: 12px;
+    top: 0;
+    left: 64%;
 }
 
 #icon-send-input:hover {
