@@ -8,8 +8,9 @@
 :root {
     --color-primary: #FAF8ED;
     --color-orange: #F66F4D;
-    --font-header: "Poppins";
-    --font-primary: "Inter"
+    --font-header: 'Poppins', sans-serif;
+    --font-primary: 'Inter', sans-serif;
+    --font-brochure: 'Sen', sans-serif;
   }
 
 ul {
@@ -96,7 +97,7 @@ a {
     font-weight: 700;
     font-size: 84px;
     line-height: 86px;
-    font-family: "Sen";
+    font-family: var(--font-brochure);
     color: #2D3134;
 }
 
